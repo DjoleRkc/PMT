@@ -28,13 +28,12 @@ vrednostima.
 #include <iostream>
 #include <random>
 using namespace std;
-constexpr auto N = 10000;
-
+constexpr auto N = 20; //promeniti na 10000 za sve tacke sem 1 i 2
 int main() {
     bool stavka;
     int n, q, jedan = 0, nula = 0; //n, duzina niza u, broj kvantizacionih nivoa, verovatnoca pojave 0 i 1
     double U = 4, delta, Ps = 0, Pnq = 0; //duzina intervala, korak kvantizacije, srednja snaga odbiraka, srednja snaga greske
-
+    cout.precision(9);
     cout << "Tacka a ili b (0 ili 1): ";
     cin >> stavka;
 
@@ -54,17 +53,17 @@ int main() {
     mt19937 gen(rd());
     uniform_real_distribution<> distrib(-U / 2, U / 2);
     for (int i = 0; i < N; i++) u[i] = e[i] = distrib(gen);// Generisanje uniformno rasporedjenih random brojeva
-        
-    
+
+
     for (int i = 0; i < N; i++) u2[i] = distrib(gen);
-        
+
 
     for (int i = 0; i < N; i++) {
         uZbir[i] = u[i] + u2[i];
         if (uZbir[i] > U / 2) uZbir[i] -= U;
         else if (uZbir[i] < -U / 2) uZbir[i] += U;
     }
-    
+
     if (stavka) {
         for (size_t i = 0; i < N; i++)
         {
@@ -95,11 +94,11 @@ int main() {
         Pnq += e[i] * e[i];
     }
 
-    
+
     //Ukoliko zelite da vam se ispisuje niz vrednosti signala i greske, odkomentarisite linije 74-92
     //a)
-    /*
-    cout << endl << "a)  Niz kvantiziranih vrednosti signala na izlazu iz kvantizera je:" << endl << "\t";
+
+    cout << endl << "a)  Niz kvantiziranih vrednosti signala na izlazu iz kvantizera je:" << endl;
     for (int i = 0; i < N; i++)
         cout << outKvantizer[i] << " ";
     cout << endl << "Niz koji predstavlja signal greske je:" << endl;
@@ -107,7 +106,7 @@ int main() {
         cout << e[i] << " ";
 
     //b)
-    cout << endl << endl << "b)  Binarni niz na izlazu kodera:" << endl << "\t";
+    cout << endl << endl << "b)  Binarni niz na izlazu kodera:" << endl;
     for (int i = 0; i < N * n; i++)
     {
         cout << binaryCode[i];
@@ -116,7 +115,7 @@ int main() {
     }
     cout << endl << "Verovatnoca pojave jedinice je " << (double)jedan / n / N << endl;
     cout << "Verovatnoca pojave nule je " << (double)nula / n / N << endl; //Racunanje verovatnoce pojave svakog od simbola
-    */
+
 
     //c) Ps
     cout << endl << "c)  Srednja snaga signala na ulazu u kvantizer Ps = " << Ps / N << endl;
@@ -128,6 +127,6 @@ int main() {
     //analiza
     cout << endl << "Odnos signal-sum SNRq = " << Ps / Pnq << endl;
     cout << "Ocekivana vrednost je " << q * q << endl;
-    cout << "Procenat greske je " << abs((1-((Ps / Pnq) / (q * q))) * 100) << "%";
+    cout << "Procenat greske je " << abs((1 - ((Ps / Pnq) / (q * q))) * 100) << "%";
     return 0;
 }
