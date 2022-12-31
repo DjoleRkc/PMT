@@ -1,30 +1,4 @@
-/*
-Napisati program koji za zadati ulazni niz odbiraka u dužine N i proizvoljan zadati broj
-kvantizacionih nivoa q=2^n:
-1) generiše niz kvantiziranih vrednosti signala na izlazu ravnomernog kvantizera i niz koji
-predstavlja signal greške kvantizacije,
-2) generiše binarni niz na izlazu kodera, pod pretpostavkom da je primenjen prost binarni kod
-(najnižem kvantizacionom nivou odgovara niz
- bita
-0...00, dok najvišem kvantizacionom nivou
-odgovara niz bita 1...11 i procenjuje vrednost verovatnoće pojave binarnih simbola 0 i 1 u
-dobijenom nizu.
-3) na osnovu ulaznog niza procenjuje usrednjavanjem (srednja kvadratna vrednost amplituda)
-vrednost srednje snage odbiraka na ulazu u kvantizer PS..
-4) na osnovu niza vrednosti signala greške kvantizacije procenjuje usrednjavanjem (srednja
-kvadratna vrednost) srednju snagu greške kvantizacije (šum kvantizacije) PNq..
-Proveriti rad programa za slučajeve kada je:
-a) Na ulazu kvantizera niz čije su amplitude uniformno raspodeljene u intervalu [-U/2, +U/2].
-a1) N=10^4, U=4, q=256.
-a2) N=10^4, U=4, q=512.
-a3) N=10^4, U=4, q=1024.
-Napomena: Niz y uniforman na intervalu [-U/2, U/2] dobija se na osnovu niza x koji ima
-uniformnu raspodelu na [0, 1] primenom y=x*U-U/2.
-b) Na ulazu kvantizera je niz u koji predstavlja zbir dva nezavisna slučajna niza u1 i u2, gde
-su amplitude svakog od njih uniformno raspodeljene u intervalu [-2, 2]V, N=10^4, q=256.
-Uporediti procenjene vrednosti odnosa PS/PNq i komentarisati da li odgovaraju teorijskim
-vrednostima.
-*/
+
 #include <iostream>
 #include <random>
 using namespace std;
