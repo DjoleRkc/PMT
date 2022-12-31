@@ -1,21 +1,4 @@
-/*
-ZADATAK 1
-Napisati program koji generiše sve kodne reči za kod opisan generišućom matricom 1 1 0 1 1 1
-                                                                                 1 1 1 1 1 1
-										 0 1 1 0 0 1
-a) Odrediti parametre koda (n,k).  
-b) Odrediti težinu svake kodne reči (broj jedinica u njoj), i napisati koliko ima kodnih reči sa težinama d=0, 1, ..., n. Protumačiti dobijeni rezultat. 
-c) Koliko grešaka može da ispravi takav kod? 
 
-ZADATAK 2 
-a)  Napisati  program  koji  uzastopno  generiše N=1000  slučajno  izabranih  informacionih  reči  dužine k=6, 
-a zatim na osnovu generišuće matrice iz prethodnog zadatka od njih formira N kodnih reči dužine n=10. 
-b) Korisnik unosi pozicije grešaka na četiri uzastopne pozicije, što odgovara paketskoj greški u kanalu. 
-Neka se ovakva paketska greška ponavlja periodično na svakih 50 binarnih simbola koji prolaze kroz kanal. 
-Za koje parametre interlivera i deinterlivera je moguće ispraviti sve greške, ako je interliving kombinuje sa kodom iz prethodnog dela zadatka?  
-c) Napisati program koji obavlja deinterliving i dekodovanje primljene sekvence (sekvence na izlazu kanala, izmenjene  pod  uticajem  periodične  paketske  smetnje).
-Uporediti  poslatu  i  primljenu  sekvencu  i  proceniti koliku verovatnoću greške vidi korisnik
-*/
 #include <iostream>
 #include <ctime>
 #define N 6
