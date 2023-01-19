@@ -1,0 +1,13 @@
+1. c) Napisati program koji za date parametre periodične povorke pravougaonih impulsa (amplituda U, trajanjeimpulsa tau, perioda T) koja je  dovedena na ulaz NF filtra 
+date granične učestanosti fgr, izračunava srednju snagu signala Pout na izlazu filtra.
+Pretpostaviti  da  je pojačanje filtra  u  okviru propusnog opsega jedinično(ANF=1).
+
+   d)Primenom programa odrediti srednju snagu Pout za slučajeve kada je na ulazu filtra signal x(t), a granične vrednosti filtra su oblika fgr=(0.5M+0.1)kHz,
+   M=1,2, 3, 4, 5, 10, 15, 20.Uporediti dobijene vrednosti srednje snage i komentarisati dobijene rezultate. Koliko bi iznosila srednja snaga signala za fgr 
+   koje tezi beskonacno?
+   
+2. b) Napisati  program koji za dati ulazni opseg  amplituda  ravnomernog  kvantizera  [Umin,  Umax] sa q=2^n nivoa  kvantizacije 
+(n-broj  bita  kojim  se  predstavlja svaki odbirak) određuje vrednosti svih kvantizacionih nivoa,  a zatim za  vrednost  amplitude  odbirka  na  ulazu  kvantizera 
+Uk određuje vrednost kvantiziranog signala,grešku kvantizacije i kodnu reč.Za parametre Umin=-2, Umax=2, Uk=0.829,ispisati vrednosti deset 
+najmanjih kvantizacionih nivoa, kvantiziran signal i grešku kvantizacije za broj bita: b1) n=4, b2) n=6, b3)n=8.Uporediti vrednosti u sva tri slučaja
+i komentarisati dobijene rezultate.
